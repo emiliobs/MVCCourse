@@ -8,5 +8,17 @@ namespace WebApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Edit(int? id)
+        {
+         if (id.HasValue)
+            {
+                return new JsonResult(new { id = id.ToString()});
+            }
+         else
+            {
+                return new ContentResult { Content = "NO content" };
+            }
+        }
     }
 }
