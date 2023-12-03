@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
@@ -11,14 +12,13 @@ namespace WebApp.Controllers
 
         public IActionResult Edit(int? id)
         {
-         if (id.HasValue)
-            {
-                return new JsonResult(new { id = id.ToString()});
-            }
-         else
-            {
-                return new ContentResult { Content = "NO content" };
-            }
+            var category = new Category() 
+            { 
+                CategoryId =  id.HasValue ? id.Value : 0,
+            };
+
+
+            return View(category);
         }
     }
 }
