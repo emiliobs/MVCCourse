@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Lib\bootstrap\" />
+  </ItemGroup>
+
 </Project>
